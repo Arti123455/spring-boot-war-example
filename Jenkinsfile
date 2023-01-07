@@ -8,8 +8,6 @@ pipeline {
             steps{
                 // mvn test
                 bat 'mvn test'
-                slackSend channel: 'youtubejenkins', message: 'Job Started'
-                
             }
             
         }
