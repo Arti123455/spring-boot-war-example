@@ -8,14 +8,12 @@ pipeline {
             steps{
                 // mvn test
                 sh "mvn test"
-            }
-            
+            }  
         }
         stage("Build"){
             steps{
-                 "sh mvn package"
-                
+                 "sh mvn package"    
             }
         } 
-    }  
+     }  
   }
