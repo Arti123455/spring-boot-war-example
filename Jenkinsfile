@@ -1,14 +1,13 @@
 pipeline {
     agent any
      tools {
-        maven 'M2' 
+        maven 'Maven' 
         }
     stages {
         stage("Test"){
             steps{
                 // mvn test
-                bat '''mvn test
-'''
+                sh "mvn test"
                 slackSend channel: 'youtubejenkins', message: 'Job Started'
                 
             }
@@ -16,7 +15,7 @@ pipeline {
         }
         stage("Build"){
             steps{
-                bat "mvn package"
+                sh "mvn package"
                 
             }
             
