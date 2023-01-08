@@ -8,6 +8,7 @@ pipeline {
             steps{
                 // mvn test
                 bat 'mvn test'
+                slackSend channel: 'springboot', message: 'Job started'
             }
             
         }
