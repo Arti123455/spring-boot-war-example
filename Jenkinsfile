@@ -25,9 +25,7 @@ pipeline {
             }
             
         }
-        
         }
-    }
     post{
         always{
             echo "========always========"
