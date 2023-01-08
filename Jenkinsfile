@@ -23,8 +23,7 @@ pipeline {
                 // deploy on container -> plugin
                 deploy adapters: [tomcat8(credentialsId: 'credtomcat', path: '', url: 'http://54.159.195.182:8090')], contextPath: '/app', war: '**/*.war'
             }
-            
-        }
+          }
         }
     post{
         always{
@@ -32,11 +31,9 @@ pipeline {
         }
         success{
             echo "========pipeline executed successfully ========"
-             slackSend channel: 'youtubejenkins', message: 'Success'
         }
         failure{
             echo "========pipeline execution failed========"
-             slackSend channel: 'youtubejenkins', message: 'Job Failed'
         }
     }
 }
