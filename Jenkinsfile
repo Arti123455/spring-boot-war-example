@@ -17,7 +17,13 @@ pipeline {
                 bat "mvn package"
                 
             }
+            post {
+                success {
+                    echo "Now Archiving the Artifacts....."
+                    archiveArtifacts artifacts: '**/*.war'
             
+              }
+            }
         }
         stage("Deploy on Test"){
             steps{
